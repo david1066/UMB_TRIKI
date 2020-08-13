@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triki</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+
+
+
+<body class="row  bg-primary justify-content-center align-items-center vh-100">
+
+    <style>
+        .boton {
+            border-color: black;
+            min-width: 80px;
+            min-height: 80px;
+            font-size: 40px;
+        }
+
+        .div-mensaje {
+            border-color: black;
+        }
+
+        #mensaje {
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        /* var text = '{"alumnos":}'
+     
+         var persona = new Object()
+         persona.cedula='2342343';
+         persona.genero='Masculino';
+         persona.nombre='David';
+         persona.apellido='Quiñones';
+         persona.fechanacimiento='6 julio 1998';
+      
+         document.getElementById('descripcion').innerHTML='sdfsd';
+      */
+        var i = 0;
+        function select(button) {
+            if (button.innerHTML != 'X' && button.innerHTML != 'O') {
+                if (i == 1) {
+
+                    button.innerHTML = 'X';
+                    i = 0;
+                } else {
+                    button.innerHTML = 'O';
+                    i = 1;
+                }
+                validar();
+            }
+
+        }
+
+        function validar() {
+
+            if (document.getElementById('1').innerHTML == 'X' && document.getElementById('2').innerHTML == 'X' && document.getElementById('3').innerHTML == 'X' || document.getElementById('1').innerHTML == 'O' && document.getElementById('2').innerHTML == 'O' && document.getElementById('3').innerHTML == 'O') {
+               desabilitar();
+            } else if (document.getElementById('1').innerHTML == 'X' && document.getElementById('4').innerHTML == 'X' && document.getElementById('7').innerHTML == 'X' || document.getElementById('1').innerHTML == 'O' && document.getElementById('4').innerHTML == 'O' && document.getElementById('7').innerHTML == 'O') {
+               desabilitar();
+            } else if (document.getElementById('1').innerHTML == 'X' && document.getElementById('5').innerHTML == 'X' && document.getElementById('9').innerHTML == 'X' || document.getElementById('1').innerHTML == 'O' && document.getElementById('5').innerHTML == 'O' && document.getElementById('9').innerHTML == 'O') {
+               desabilitar();
+            } else if (document.getElementById('7').innerHTML == 'X' && document.getElementById('8').innerHTML == 'X' && document.getElementById('9').innerHTML == 'X' || document.getElementById('7').innerHTML == 'O' && document.getElementById('8').innerHTML == 'O' && document.getElementById('9').innerHTML == 'O') {
+               desabilitar();
+            } else if (document.getElementById('4').innerHTML == 'X' && document.getElementById('5').innerHTML == 'X' && document.getElementById('6').innerHTML == 'X' || document.getElementById('4').innerHTML == 'O' && document.getElementById('5').innerHTML == 'O' && document.getElementById('6').innerHTML == 'O') {
+               desabilitar();
+            } else if (document.getElementById('3').innerHTML == 'X' && document.getElementById('6').innerHTML == 'X' && document.getElementById('9').innerHTML == 'X' || document.getElementById('3').innerHTML == 'O' && document.getElementById('6').innerHTML == 'O' && document.getElementById('9').innerHTML == 'O') {
+               desabilitar();
+            } else if (document.getElementById('7').innerHTML == 'X' && document.getElementById('5').innerHTML == 'X' && document.getElementById('3').innerHTML == 'X' || document.getElementById('7').innerHTML == 'O' && document.getElementById('5').innerHTML == 'O' && document.getElementById('3').innerHTML == 'O') {
+                desabilitar();
+
+            }
+
+
+
+
+        }
+        function desabilitar(){
+            document.getElementById('mensaje').innerHTML = 'Haz Ganado';
+            document.getElementById('1').disabled = true; 
+            document.getElementById('2').disabled = true;
+            document.getElementById('3').disabled = true; 
+            document.getElementById('4').disabled = true;
+            document.getElementById('5').disabled = true; 
+            document.getElementById('6').disabled = true;
+            document.getElementById('7').disabled = true; 
+            document.getElementById('8').disabled = true;
+            document.getElementById('9').disabled = true;
+        }
+
+    </script>
+    <div class=" bg-white">
+
+
+        <div class=" d-flex justify-content-center">
+            <button class="boton" onclick="select(document.getElementById('1'))" id="1">
+                <button class="boton" onclick="select(document.getElementById('2'))" id="2">
+                    <button class="boton" onclick="select(document.getElementById('3'))" id="3">
+        </div>
+
+        <div class=" d-flex justify-content-center">
+            <button class="boton" onclick="select(document.getElementById('4'))" id="4">
+                <button class="boton" onclick="select(document.getElementById('5'))" id="5">
+                    <button class="boton" onclick="select(document.getElementById('6'))" id="6">
+        </div>
+
+        <div class=" d-flex justify-content-center">
+            <button class="boton" onclick="select(document.getElementById('7'))" id="7">
+                <button class="boton" onclick="select(document.getElementById('8'))" id="8">
+                    <button class="boton" onclick="select(document.getElementById('9'))" id="9">
+        </div>
+
+        <div class="div-mensaje">
+
+            <div class="bg-primary text-white text-center">
+                <label id="mensaje"></label>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+
+</html>
